@@ -832,6 +832,92 @@ body.loading {
 }
 
 /* ============================================
+   LOCATION SECTION
+   ============================================ */
+.location {
+    padding: var(--space-3xl) 0;
+    background: var(--color-bg-alt);
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+}
+
+.location-content {
+    padding-right: var(--space-xl);
+}
+
+.location-lead {
+    font-family: var(--font-serif);
+    font-size: var(--text-xl);
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--color-text);
+    margin-bottom: var(--space-lg);
+}
+
+.location-content p {
+    color: var(--color-text-muted);
+}
+
+.location-image {
+    position: relative;
+}
+
+.location-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ============================================
+   FLEET SECTION (was COLLECTION)
+   ============================================ */
+.fleet {
+    padding: var(--space-3xl) 0;
+    background: var(--color-bg);
+}
+
+.fleet-header {
+    max-width: 600px;
+    margin-bottom: var(--space-2xl);
+}
+
+.fleet-intro {
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+}
+
+.fleet-gallery {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--space-md);
+    padding: 0 var(--container-padding);
+    max-width: 1600px;
+    margin: 0 auto var(--space-2xl);
+}
+
+.fleet-details {
+    max-width: 800px;
+    margin: var(--space-2xl) auto 0;
+    text-align: center;
+}
+
+.fleet-details p {
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-sm);
+}
+
+.fleet-note {
+    font-size: var(--text-sm);
+    font-style: italic;
+    color: var(--color-text-light);
+}
+
+/* ============================================
    COLLECTION SECTION
    ============================================ */
 .collection {
@@ -1271,6 +1357,56 @@ body.loading {
     min-height: 120px;
 }
 
+.form-group select {
+    width: 100%;
+    padding: 1em;
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    color: var(--color-text);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    transition: border-color var(--duration-fast) var(--ease-smooth);
+    cursor: pointer;
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: var(--color-text);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+    margin-bottom: 0;
+}
+
+/* ============================================
+   WAITLIST SECTION
+   ============================================ */
+.waitlist {
+    padding: var(--space-3xl) 0;
+    background: var(--color-bg);
+}
+
+.waitlist-header {
+    max-width: 700px;
+    margin: 0 auto var(--space-2xl);
+    text-align: center;
+}
+
+.waitlist-intro {
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+}
+
+.waitlist-form {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--color-bg-alt);
+    padding: var(--space-xl);
+}
+
 /* ============================================
    FOOTER
    ============================================ */
@@ -1294,6 +1430,13 @@ body.loading {
     letter-spacing: 0.25em;
     color: var(--color-white);
     margin-bottom: var(--space-sm);
+}
+
+.footer-logo-img {
+    height: 36px;
+    width: auto;
+    display: block;
+    margin-bottom: var(--space-md);
 }
 
 .footer-tagline {
@@ -1400,6 +1543,15 @@ body.loading {
         grid-template-columns: repeat(2, 1fr);
     }
     
+    .location-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+    
+    .location-content {
+        padding-right: 0;
+    }
+    
     .membership-grid {
         grid-template-columns: 1fr;
         gap: var(--space-xl);
@@ -1413,8 +1565,11 @@ body.loading {
         grid-template-columns: 1fr;
         gap: var(--space-xl);
     }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
 }
-
 @media (max-width: 768px) {
     .nav-links {
         display: none;

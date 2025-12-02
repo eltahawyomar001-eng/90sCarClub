@@ -206,51 +206,62 @@ function initSmoothScroll() {
    FORM HANDLING
    ============================================ */
 function initForm() {
-    const form = document.getElementById('contactForm');
+    const contactForm = document.getElementById('contactForm');
+    const waitlistForm = document.getElementById('waitlistForm');
     
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
+    // Handle contact form if it exists
+    if (contactForm) {
+        contactForm.addEventListener('submit', handleFormSubmit);
+    }
+    
+    // Handle waitlist form
+    if (waitlistForm) {
+        waitlistForm.addEventListener('submit', handleFormSubmit);
+    }
+    
+    function handleFormSubmit(e) {
+        e.preventDefault();
+        
+        const form = e.target;
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        
+        submitBtn.textContent = 'Submitting...';
+        submitBtn.disabled = true;
+        
+        // Get form data
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+        
+        console.log('Form submitted:', data);
+        
+        setTimeout(() => {
+            // Show success message
+            submitBtn.textContent = 'Application Submitted!';
+            submitBtn.style.background = '#2E7D32';
             
-            // Get form data
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData);
-            
-            // Simulate form submission
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            
-            submitBtn.textContent = 'Submitting...';
-            submitBtn.disabled = true;
-            
+            // Reset form
             setTimeout(() => {
-                // Show success message
-                submitBtn.textContent = 'Application Submitted!';
-                submitBtn.style.background = '#2E7D32';
-                
-                // Reset form
-                setTimeout(() => {
-                    form.reset();
-                    submitBtn.textContent = originalText;
-                    submitBtn.style.background = '';
-                    submitBtn.disabled = false;
-                }, 3000);
-            }, 1500);
+                form.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.style.background = '';
+                submitBtn.disabled = false;
+            }, 3000);
+        }, 1500);
+    }
+    
+    // Add floating label effect
+    document.querySelectorAll('input, textarea, select').forEach(input => {
+        input.addEventListener('focus', function() {
+            this.parentElement.classList.add('focused');
         });
         
-        // Add floating label effect
-        form.querySelectorAll('input, textarea').forEach(input => {
-            input.addEventListener('focus', function() {
-                this.parentElement.classList.add('focused');
-            });
-            
-            input.addEventListener('blur', function() {
-                if (!this.value) {
-                    this.parentElement.classList.remove('focused');
-                }
-            });
+        input.addEventListener('blur', function() {
+            if (!this.value) {
+                this.parentElement.classList.remove('focused');
+            }
         });
-    }
+    });
 }
 
 /* ============================================
