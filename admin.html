@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BVCC Admin Panel</title>
+    <link rel="stylesheet" href="admin-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div class="login-screen" id="loginScreen">
+        <div class="login-box">
+            <img src="BrooklynVintageCarClub_Official/Logo/Logo/svg/Red.svg" alt="BVCC" class="login-logo">
+            <h1>Admin Panel</h1>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter admin password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <p class="login-hint">Hint: bvcc2024</p>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div class="admin-panel" id="adminPanel" style="display: none;">
+        <!-- Header -->
+        <header class="admin-header">
+            <div class="admin-header-inner">
+                <img src="BrooklynVintageCarClub_Official/Logo/Logo/svg/Red.svg" alt="BVCC" class="admin-logo">
+                <div class="admin-actions">
+                    <a href="index.html" target="_blank" class="btn btn-ghost">View Site</a>
+                    <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="admin-content">
+            <div class="admin-sidebar">
+                <nav class="admin-nav">
+                    <a href="#hero" class="admin-nav-item active" data-section="hero">
+                        <span>🏠</span> Hero
+                    </a>
+                    <a href="#about" class="admin-nav-item" data-section="about">
+                        <span>ℹ️</span> About
+                    </a>
+                    <a href="#location" class="admin-nav-item" data-section="location">
+                        <span>📍</span> Location
+                    </a>
+                    <a href="#fleet" class="admin-nav-item" data-section="fleet">
+                        <span>🚗</span> Fleet
+                    </a>
+                    <a href="#membership" class="admin-nav-item" data-section="membership">
+                        <span>👥</span> Membership
+                    </a>
+                    <a href="#waitlist" class="admin-nav-item" data-section="waitlist">
+                        <span>📋</span> Waitlist Submissions
+                    </a>
+                </nav>
+            </div>
+
+            <div class="admin-main">
+                <!-- Hero Section -->
+                <div class="admin-section active" id="section-hero">
+                    <h2>Hero Section</h2>
+                    <div class="editor-card">
+                        <div class="form-group">
+                            <label>Tag Text</label>
+                            <input type="text" id="hero-tag" value="Brooklyn, NY — Members Only">
+                        </div>
+                        <div class="form-group">
+                            <label>Main Title Line 1</label>
+                            <input type="text" id="hero-title-1" value="Your private">
+                        </div>
+                        <div class="form-group">
+                            <label>Main Title Line 2</label>
+                            <input type="text" id="hero-title-2" value="drivers' club.">
+                        </div>
+                        <div class="form-group">
+                            <label>Subtitle</label>
+                            <textarea id="hero-subtitle" rows="3">Analog-era performance. Modern classics.
+A minimalist, industrial space built for people who love to drive.</textarea>
+                        </div>
+                        <button class="btn btn-primary save-btn" data-section="hero">Save Changes</button>
+                    </div>
+                </div>
+
+                <!-- About Section -->
+                <div class="admin-section" id="section-about">
+                    <h2>About Section</h2>
+                    <div class="editor-card">
+                        <div class="form-group">
+                            <label>Section Title</label>
+                            <input type="text" id="about-title" value="Quiet. Minimal. Practical.">
+                        </div>
+                        <div class="form-group">
+                            <label>Lead Paragraph</label>
+                            <textarea id="about-lead" rows="3">Brooklyn Vintage Car Club is a small, private drivers' club centered on analog, modern-classic cars from the 1990s and 2000s.</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Main Content Paragraph 1</label>
+                            <textarea id="about-p1" rows="3">The emphasis is driving—quiet, minimal, and practical. A clean industrial space, a curated fleet, frictionless access, and a small membership base that appreciates substance over spectacle.</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Main Content Paragraph 2</label>
+                            <textarea id="about-p2" rows="3">The space includes a simple lounge with a low-key, self-serve bar, lockers, and room to decompress before or after drives. Built for people who value engagement, analog feel, and the clarity of mechanical controls.</textarea>
+                        </div>
+                        <button class="btn btn-primary save-btn" data-section="about">Save Changes</button>
+                    </div>
+                </div>
+
+                <!-- Location Section -->
+                <div class="admin-section" id="section-location">
+                    <h2>Location Section</h2>
+                    <div class="editor-card">
+                        <div class="form-group">
+                            <label>Section Title</label>
+                            <input type="text" id="location-title" value="Brooklyn. Industrial.">
+                        </div>
+                        <div class="form-group">
+                            <label>Lead Paragraph</label>
+                            <textarea id="location-lead" rows="3">The club will be located in either Red Hook or Sunset Park—Brooklyn neighborhoods defined by industrial buildings, wide blocks, and easy vehicle access.</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Additional Text</label>
+                            <textarea id="location-text" rows="2">Both areas have the right architecture and access for a drivers' club.</textarea>
+                        </div>
+                        <button class="btn btn-primary save-btn" data-section="location">Save Changes</button>
+                    </div>
+                </div>
+
+                <!-- Fleet Section -->
+                <div class="admin-section" id="section-fleet">
+                    <h2>Fleet Section</h2>
+                    <div class="editor-card">
+                        <div class="form-group">
+                            <label>Section Title</label>
+                            <input type="text" id="fleet-title" value="Driver-focused machines">
+                        </div>
+                        <div class="form-group">
+                            <label>Introduction</label>
+                            <textarea id="fleet-intro" rows="3">A curated set of 90s and 2000s European modern classics—driver-focused machines known for character, engagement, and analog feel.</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Fleet Details</label>
+                            <textarea id="fleet-details" rows="2">Launch with 8–10 cars, grow to 12 by the end of year two, and expand to 18 as membership scales.</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Note</label>
+                            <input type="text" id="fleet-note" value="Subject to availability, acquisition timing and member demand.">
+                        </div>
+                        <button class="btn btn-primary save-btn" data-section="fleet">Save Changes</button>
+                    </div>
+                </div>
+
+                <!-- Membership Section -->
+                <div class="admin-section" id="section-membership">
+                    <h2>Membership Section</h2>
+                    <div class="editor-card">
+                        <div class="form-group">
+                            <label>Section Title</label>
+                            <input type="text" id="membership-title" value="Great cars. Easy access. Zero friction.">
+                        </div>
+                        <div class="form-group">
+                            <label>Lead Paragraph</label>
+                            <textarea id="membership-lead" rows="3">Membership includes an initiation fee and monthly dues. Full details are shared privately with applicants during the review process.</textarea>
+                        </div>
+                        <button class="btn btn-primary save-btn" data-section="membership">Save Changes</button>
+                    </div>
+                </div>
+
+                <!-- Waitlist Submissions -->
+                <div class="admin-section" id="section-waitlist">
+                    <h2>Waitlist Submissions</h2>
+                    <div class="editor-card">
+                        <div class="submissions-header">
+                            <p>Total Submissions: <strong id="totalSubmissions">0</strong></p>
+                            <button class="btn btn-secondary" id="clearSubmissions">Clear All</button>
+                        </div>
+                        <div class="submissions-list" id="submissionsList">
+                            <p class="no-submissions">No submissions yet.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Toast -->
+        <div class="toast" id="toast">
+            <span id="toastMessage">Changes saved successfully!</span>
+        </div>
+    </div>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>

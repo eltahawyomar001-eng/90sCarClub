@@ -1,0 +1,451 @@
+/* ============================================
+   BVCC Admin Panel Styles
+   ============================================ */
+
+:root {
+    --color-bg: #FAFAF8;
+    --color-bg-alt: #F2F1EE;
+    --color-bg-dark: #1A1918;
+    --color-text: #1A1918;
+    --color-text-muted: #6B6966;
+    --color-text-light: #9A9895;
+    --color-accent: #FA2223;
+    --color-accent-hover: #D91E1F;
+    --color-white: #FFFFFF;
+    --color-border: rgba(26, 25, 24, 0.1);
+    --color-success: #2E7D32;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--color-text);
+    background: var(--color-bg);
+}
+
+/* ============================================
+   LOGIN SCREEN
+   ============================================ */
+.login-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg-dark);
+}
+
+.login-box {
+    background: var(--color-white);
+    padding: 3rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.login-logo {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto 2rem;
+}
+
+.login-box h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--color-text);
+}
+
+.login-hint {
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+    margin-top: 1rem;
+}
+
+/* ============================================
+   ADMIN PANEL
+   ============================================ */
+.admin-header {
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.admin-header-inner {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.admin-logo {
+    height: 32px;
+    width: auto;
+}
+
+.admin-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* ============================================
+   CONTENT LAYOUT
+   ============================================ */
+.admin-content {
+    display: flex;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.admin-sidebar {
+    width: 240px;
+    background: var(--color-white);
+    border-right: 1px solid var(--color-border);
+    min-height: calc(100vh - 65px);
+    position: sticky;
+    top: 65px;
+}
+
+.admin-nav {
+    padding: 2rem 0;
+}
+
+.admin-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.875rem 2rem;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: all 0.2s;
+    border-left: 3px solid transparent;
+    font-weight: 500;
+    font-size: 0.9375rem;
+}
+
+.admin-nav-item:hover {
+    background: var(--color-bg);
+    color: var(--color-text);
+}
+
+.admin-nav-item.active {
+    background: var(--color-bg-alt);
+    color: var(--color-accent);
+    border-left-color: var(--color-accent);
+}
+
+.admin-nav-item span {
+    font-size: 1.25rem;
+}
+
+.admin-main {
+    flex: 1;
+    padding: 2rem;
+}
+
+/* ============================================
+   SECTIONS
+   ============================================ */
+.admin-section {
+    display: none;
+}
+
+.admin-section.active {
+    display: block;
+}
+
+.admin-section h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+}
+
+/* ============================================
+   EDITOR CARD
+   ============================================ */
+.editor-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* ============================================
+   FORM ELEMENTS
+   ============================================ */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    background: var(--color-white);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background: var(--color-accent);
+    color: var(--color-white);
+}
+
+.btn-primary:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: var(--color-text-muted);
+    color: var(--color-white);
+}
+
+.btn-secondary:hover {
+    background: var(--color-text);
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+}
+
+.btn-ghost:hover {
+    background: var(--color-bg-alt);
+    border-color: var(--color-text-muted);
+}
+
+.save-btn {
+    margin-top: 1rem;
+}
+
+/* ============================================
+   SUBMISSIONS
+   ============================================ */
+.submissions-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.submissions-header p {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+}
+
+.submissions-header strong {
+    color: var(--color-accent);
+}
+
+.submissions-list {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.submission-item {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.submission-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.submission-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.submission-date {
+    font-size: 0.8125rem;
+    color: var(--color-text-light);
+}
+
+.submission-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.submission-field {
+    margin-bottom: 0.75rem;
+}
+
+.submission-field-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    margin-bottom: 0.25rem;
+}
+
+.submission-field-value {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+}
+
+.submission-field-full {
+    grid-column: 1 / -1;
+}
+
+.no-submissions {
+    text-align: center;
+    padding: 3rem;
+    color: var(--color-text-light);
+    font-size: 1rem;
+}
+
+/* ============================================
+   TOAST NOTIFICATION
+   ============================================ */
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--color-success);
+    color: var(--color-white);
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(200%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.toast.show {
+    transform: translateY(0);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .admin-content {
+        flex-direction: column;
+    }
+
+    .admin-sidebar {
+        width: 100%;
+        position: static;
+        border-right: none;
+        border-bottom: 1px solid var(--color-border);
+        min-height: auto;
+    }
+
+    .admin-nav {
+        padding: 0;
+        display: flex;
+        overflow-x: auto;
+    }
+
+    .admin-nav-item {
+        white-space: nowrap;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+    }
+
+    .admin-nav-item.active {
+        border-left: none;
+        border-bottom-color: var(--color-accent);
+    }
+
+    .admin-main {
+        padding: 1.5rem;
+    }
+
+    .submission-details {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-header-inner {
+        padding: 1rem;
+    }
+
+    .admin-logo {
+        height: 24px;
+    }
+
+    .login-box {
+        margin: 1rem;
+        padding: 2rem;
+    }
+}

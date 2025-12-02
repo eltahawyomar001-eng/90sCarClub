@@ -235,6 +235,11 @@ function initForm() {
         
         console.log('Form submitted:', data);
         
+        // If this is the waitlist form, save to localStorage
+        if (form.id === 'waitlistForm') {
+            saveWaitlistSubmission(data);
+        }
+        
         setTimeout(() => {
             // Show success message
             submitBtn.textContent = 'Application Submitted!';
@@ -248,6 +253,23 @@ function initForm() {
                 submitBtn.disabled = false;
             }, 3000);
         }, 1500);
+    }
+    
+    function saveWaitlistSubmission(data) {
+        // Get existing submissions
+        const submissions = JSON.parse(localStorage.getItem('bvcc_submissions') || '[]');
+        
+        // Add timestamp to submission
+        const submission = {
+            ...data,
+            timestamp: new Date().toISOString()
+        };
+        
+        // Add new submission
+        submissions.push(submission);
+        
+        // Save back to localStorage
+        localStorage.setItem('bvcc_submissions', JSON.stringify(submissions));
     }
     
     // Add floating label effect
