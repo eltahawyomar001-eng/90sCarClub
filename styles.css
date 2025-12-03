@@ -1514,9 +1514,12 @@ body.loading {
     
     .hero {
         padding-top: 8vh;
-        height: auto;
-        min-height: auto;
+        height: 100vh;
+        min-height: 100vh;
         padding-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     
     .hero-title {
@@ -1534,7 +1537,7 @@ body.loading {
     
     .hero-car {
         position: relative;
-        margin-top: 1rem;
+        margin-top: auto;
     }
     
     .hero-car-img {
