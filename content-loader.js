@@ -243,7 +243,7 @@ function applyContactInfo(contact) {
     // Hide contact column if nothing to show
     const contactCol = footer.querySelector('.footer-contact');
     if (contactCol) {
-        const hasContent = contact.phone || contact.address || contact.hours;
+        const hasContent = contact.email || contact.phone || contact.address || contact.hours;
         contactCol.style.display = hasContent ? 'block' : 'none';
     }
     
