@@ -472,7 +472,7 @@ body.loading {
     justify-content: flex-start;
     padding-top: 12vh;
     overflow: hidden;
-    background: #000000;
+    background: #0a090e;
 }
 
 .hero-content {
@@ -546,8 +546,6 @@ body.loading {
     width: 100%;
     max-width: 1000px;
     height: auto;
-    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
 }
 
 /* ============================================
