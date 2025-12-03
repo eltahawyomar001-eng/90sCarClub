@@ -1,0 +1,87 @@
+﻿Notes:
+
+
+General:
+--Theme - I want to keep it a dark theme throughout - I do not want it changing to light after home screen
+-The mouse cursor should just be a regular pointer - nothing special
+-There should be no animation of any kind. No zooming in on the picture. No movement. 
+-Logo - should be this color scheme - 
+  
+-There is too much dead space between the sections - needs to be tighter
+
+
+Home section - 
+-Let’s remove the “scroll” part. It’s overlapping with the text incorrectly anyways. 
+  
+
+
+-The “Brooklyn, NY - Members only” text should be removed
+
+
+  
+
+
+
+The hero shot will be a silhouette of a red 964 911 like one of the shots below (found in adobe - do not download from here). Whichever fits better in the frame. 
+
+
+  
+
+  
+
+  
+
+
+
+About the Club Section
+
+-Need to make sure all of the language is in this section 
+
+
+Brooklyn Vintage Car Club is a small, private drivers’ club centered on analog, modern-classic cars from the 1990s and 2000s. The emphasis is on driving—quiet, minimal, and practical.
+A clean industrial space, a curated fleet, frictionless access, and a small membership base that appreciates substance over spectacle.
+The space includes a simple lounge with a low-key, self-serve bar, lockers, and room to decompress before or after drives.
+Built for people who value engagement, analog feel, and the clarity of mechanical controls.
+Let’s use this photo (from adobe)
+  
+
+
+
+Location section - 
+Use this picture instead
+  
+
+Fleet section - 
+-Should be titled “Fleet philosophy” because I do not have a fleet yet. Needs all of the below exact text. I am not trying to do a picture per car since I do not have the fleet yet and the cars do not need to be labeled. I just want the 3 example pics below (from adobe)
+  
+
+  
+
+  
+
+Exact text for the section -
+A curated set of 90s and 2000s European modern classics—driver-focused machines known for character, engagement, and analog feel.
+Acquisition plan: launch with 8–10 cars, grow to 12 by the end of year two, and expand to 18 as membership scales.
+Representative models include:
+Porsche: 964, 993, 996 GT3, 997 Turbo, 944 Turbo
+BMW: E36 M3, E46 M3, E39 M5, Z3 M Coupe
+Mercedes: CLK63 Black Series
+Ferrari: F430
+Aston Martin: V8 Vantage (manual)
+Acura/Honda/Nissan: NSX (NA1), S2000, 300ZX Twin Turbo
+Subject to availability and acquisition timing.
+Membership section:
+Use this photo from adobe 
+  
+
+These need to say “Apply for Waitlist” uniformly NOT “apply for membership”
+  
+
+Form looks misaligned - 
+  
+
+This should not appear as you scroll. It should all be there.
+
+
+Footer
+Contact should be john@brooklynvintagecarclub.com

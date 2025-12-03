@@ -93,87 +93,20 @@ function initMobileMenu() {
 
 /* ============================================
    SCROLL ANIMATIONS (Reveal on Scroll)
+   - DISABLED per client request - all content visible immediately
    ============================================ */
 function initScrollAnimations() {
-    // Add reveal class to elements
-    const revealElements = [
-        '.section-tag',
-        '.section-title',
-        '.about-lead',
-        '.about-content p',
-        '.stat',
-        '.collection-intro',
-        '.gallery-item',
-        '.quote',
-        '.membership-lead',
-        '.membership-requirements',
-        '.membership-benefits',
-        '.membership-image',
-        '.event-item',
-        '.contact-info',
-        '.contact-form',
-        '.form-group'
-    ];
-    
-    revealElements.forEach(selector => {
-        document.querySelectorAll(selector).forEach((el, index) => {
-            el.classList.add('reveal');
-            // Stagger animations for grouped elements
-            if (selector === '.stat' || selector === '.form-group') {
-                el.classList.add(`reveal-delay-${(index % 4) + 1}`);
-            }
-            if (selector === '.gallery-item') {
-                el.classList.add(`reveal-delay-${(index % 3) + 1}`);
-            }
-        });
-    });
-    
-    // Intersection Observer for reveal animations
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px 0px -100px 0px',
-        threshold: 0.1
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-    
-    document.querySelectorAll('.reveal').forEach(el => {
-        observer.observe(el);
-    });
+    // Animations disabled - all content visible immediately
+    return;
 }
 
 /* ============================================
    PARALLAX EFFECTS
+   - DISABLED per client request - no animations
    ============================================ */
 function initParallax() {
-    const heroImage = document.querySelector('.hero-image');
-    let ticking = false;
-    
-    function updateParallax() {
-        const scrolled = window.pageYOffset;
-        const heroHeight = window.innerHeight;
-        
-        if (scrolled < heroHeight) {
-            const parallaxValue = scrolled * 0.4;
-            heroImage.style.transform = `scale(1) translateY(${parallaxValue}px)`;
-        }
-        
-        ticking = false;
-    }
-    
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            requestAnimationFrame(updateParallax);
-            ticking = true;
-        }
-    });
+    // Parallax disabled - no animations
+    return;
 }
 
 /* ============================================
@@ -300,104 +233,11 @@ function initForm() {
 
 /* ============================================
    CUSTOM CURSOR (Desktop Enhancement)
+   - DISABLED per client request - use regular pointer
    ============================================ */
 function initCursor() {
-    // Only on desktop
-    if (window.matchMedia('(pointer: fine)').matches) {
-        const cursor = document.createElement('div');
-        cursor.className = 'custom-cursor';
-        cursor.innerHTML = '<div class="cursor-dot"></div><div class="cursor-outline"></div>';
-        document.body.appendChild(cursor);
-        
-        // Add cursor styles
-        const style = document.createElement('style');
-        style.textContent = `
-            .custom-cursor {
-                pointer-events: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                z-index: 10000;
-                mix-blend-mode: difference;
-            }
-            
-            .cursor-dot {
-                position: absolute;
-                width: 8px;
-                height: 8px;
-                background: #fff;
-                border-radius: 50%;
-                transform: translate(-50%, -50%);
-                transition: transform 0.1s ease;
-            }
-            
-            .cursor-outline {
-                position: absolute;
-                width: 40px;
-                height: 40px;
-                border: 1px solid rgba(255, 255, 255, 0.5);
-                border-radius: 50%;
-                transform: translate(-50%, -50%);
-                transition: all 0.15s ease;
-            }
-            
-            .custom-cursor.hover .cursor-dot {
-                transform: translate(-50%, -50%) scale(1.5);
-            }
-            
-            .custom-cursor.hover .cursor-outline {
-                transform: translate(-50%, -50%) scale(1.5);
-                border-color: rgba(255, 255, 255, 0.8);
-            }
-            
-            body:has(.custom-cursor) {
-                cursor: none;
-            }
-            
-            body:has(.custom-cursor) a,
-            body:has(.custom-cursor) button {
-                cursor: none;
-            }
-        `;
-        document.head.appendChild(style);
-        
-        let mouseX = 0;
-        let mouseY = 0;
-        let cursorX = 0;
-        let cursorY = 0;
-        
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
-        
-        function animateCursor() {
-            const dx = mouseX - cursorX;
-            const dy = mouseY - cursorY;
-            
-            cursorX += dx * 0.15;
-            cursorY += dy * 0.15;
-            
-            cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
-            
-            requestAnimationFrame(animateCursor);
-        }
-        
-        animateCursor();
-        
-        // Hover effects
-        const hoverElements = document.querySelectorAll('a, button, .gallery-item');
-        
-        hoverElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.classList.add('hover');
-            });
-            
-            el.addEventListener('mouseleave', () => {
-                cursor.classList.remove('hover');
-            });
-        });
-    }
+    // Custom cursor disabled - use regular pointer
+    return;
 }
 
 /* ============================================
