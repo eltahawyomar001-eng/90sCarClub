@@ -542,6 +542,17 @@ body.loading {
     text-align: center;
 }
 
+.hero-car::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, #000000);
+    pointer-events: none;
+}
+
 .hero-car-img {
     width: 100%;
     max-width: 1000px;
