@@ -39,8 +39,8 @@
     --space-md: 1rem;
     --space-lg: 1.5rem;
     --space-xl: 2rem;
-    --space-2xl: 3rem;
-    --space-3xl: 4rem;
+    --space-2xl: 2.5rem;
+    --space-3xl: 3rem;
     
     /* Layout */
     --container-max: 1400px;
@@ -938,9 +938,9 @@ body.loading {
     cursor: pointer;
     border-radius: 4px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: all var(--duration-normal) var(--ease-smooth);
 }
 
+/* No hover effects per client request */
 .gallery-item:hover {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
@@ -985,12 +985,11 @@ body.loading {
     width: 100%;
     padding: var(--space-lg);
     background: linear-gradient(to top, rgba(26, 25, 24, 0.95), rgba(26, 25, 24, 0.6));
-    transform: translateY(0);
-    transition: all var(--duration-normal) var(--ease-smooth);
 }
 
+/* No hover effects per client request */
 .gallery-item:hover .gallery-info {
-    background: linear-gradient(to top, rgba(26, 25, 24, 0.98), rgba(26, 25, 24, 0.75));
+    background: linear-gradient(to top, rgba(26, 25, 24, 0.95), rgba(26, 25, 24, 0.6));
 }
 
 .gallery-year {
@@ -1016,12 +1015,12 @@ body.loading {
     color: rgba(255, 255, 255, 0.85);
     opacity: 1;
     line-height: 1.6;
-    transition: opacity var(--duration-normal) var(--ease-smooth);
 }
 
+/* No hover effects per client request */
 .gallery-item:hover .gallery-desc {
     opacity: 1;
-    color: rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, 0.85);
 }
 
 /* ============================================
@@ -1190,11 +1189,11 @@ body.loading {
     align-items: center;
     padding: var(--space-lg) 0;
     background: var(--color-bg-alt);
-    transition: background var(--duration-fast) var(--ease-smooth);
 }
 
+/* No hover effects per client request */
 .event-item:hover {
-    background: var(--color-bg);
+    background: var(--color-bg-alt);
 }
 
 .event-date {
@@ -1333,17 +1332,15 @@ body.loading {
     font-family: var(--font-sans);
     font-size: var(--text-base);
     color: var(--color-text);
-    background: var(--color-white);
+    background: var(--color-bg-dark);
     border: 2px solid var(--color-border);
     border-radius: 4px;
-    transition: all var(--duration-fast) var(--ease-smooth);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
     border-color: var(--color-accent);
-    box-shadow: 0 0 0 3px rgba(250, 34, 35, 0.1);
 }
 
 .form-group input::placeholder,
@@ -1363,17 +1360,15 @@ body.loading {
     font-family: var(--font-sans);
     font-size: var(--text-base);
     color: var(--color-text);
-    background: var(--color-white);
+    background: var(--color-bg-dark);
     border: 2px solid var(--color-border);
     border-radius: 4px;
-    transition: all var(--duration-fast) var(--ease-smooth);
     cursor: pointer;
 }
 
 .form-group select:focus {
     outline: none;
     border-color: var(--color-accent);
-    box-shadow: 0 0 0 3px rgba(250, 34, 35, 0.1);
 }
 
 .form-row {
