@@ -479,10 +479,10 @@ body.loading {
 
 @keyframes heroZoom {
     0% {
-        background-size: 100%;
+        background-size: cover;
     }
     100% {
-        background-size: 110%;
+        background-size: 110% auto;
     }
 }
 
@@ -1648,6 +1648,14 @@ body.loading {
     
     .nav-toggle {
         display: flex;
+    }
+    
+    .hero {
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        animation: none;
     }
     
     .hero-title {
