@@ -471,7 +471,7 @@ body.loading {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: #1A1918 !important;
+    background: #000000 !important;
     background-image: none !important;
 }
 
@@ -533,20 +533,17 @@ body.loading {
     margin-bottom: var(--space-xl);
 }
 
-/* Hero Car Image - positioned at bottom, partially visible */
+/* Hero Car Image - directly under buttons */
 .hero-car {
-    position: absolute;
-    bottom: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
+    margin-top: 2rem;
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 .hero-car-img {
-    max-width: 500px;
-    width: 70%;
+    max-width: 800px;
+    width: 90%;
     height: auto;
     object-fit: contain;
     mix-blend-mode: multiply;
