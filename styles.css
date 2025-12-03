@@ -472,7 +472,7 @@ body.loading {
     justify-content: flex-start;
     padding-top: 12vh;
     overflow: hidden;
-    background: #000000 !important;
+    background: #3d4249 !important;
 }
 
 .hero-content {
@@ -533,19 +533,24 @@ body.loading {
     margin-bottom: var(--space-xl);
 }
 
-/* Hero Car Image - directly under buttons, tight spacing */
+/* Hero Car Image - big, directly under buttons, zoomed in to show car prominently */
 .hero-car {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
     display: flex;
     justify-content: center;
-    width: 100%;
 }
 
 .hero-car-img {
-    max-width: 600px;
-    width: 80%;
+    width: 100%;
+    max-width: 1000px;
     height: auto;
-    border-radius: 4px;
+    object-fit: cover;
+    object-position: center 40%;
+    transform: scale(1.15);
+    transform-origin: center 30%;
 }
 
 /* ============================================
