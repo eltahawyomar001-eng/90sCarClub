@@ -1069,11 +1069,21 @@ body.loading {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-2xl);
-    align-items: center;
+    align-items: start;
 }
 
 .membership-content {
     padding-right: var(--space-lg);
+}
+
+.membership-content .section-title {
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--color-text);
+    margin-bottom: var(--space-lg);
+    display: block;
 }
 
 .membership-lead {
@@ -1083,6 +1093,7 @@ body.loading {
     line-height: 1.6;
     color: var(--color-text);
     margin-bottom: var(--space-lg);
+    display: block;
 }
 
 .membership-requirements,
