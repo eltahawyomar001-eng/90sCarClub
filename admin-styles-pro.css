@@ -650,6 +650,84 @@ body {
     }
 }
 
+/* ============================================
+   IMAGE UPLOAD COMPONENTS
+   ============================================ */
+.image-upload-container {
+    margin-top: 0.5rem;
+}
+
+.image-preview {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: 200px;
+    border: 2px dashed var(--color-border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    margin-bottom: 1rem;
+    background: var(--color-bg-alt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.image-preview img[src]:not([src=""]) {
+    display: block;
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(26, 25, 24, 0.8);
+    color: var(--color-white);
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+.image-preview:not(:has(img[src]:not([src=""]))) .image-overlay {
+    position: static;
+    background: none;
+    color: var(--color-gray);
+}
+
+.car-editor {
+    background: var(--color-bg-alt);
+    padding: 1.5rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--color-border);
+}
+
+.car-editor h4 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.car-editor .image-preview {
+    max-width: 300px;
+    height: 180px;
+}
+
+.form-hint {
+    font-size: 0.75rem;
+    color: var(--color-gray);
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
 @media (max-width: 768px) {
     .admin-content {
         flex-direction: column;
@@ -688,5 +766,9 @@ body {
         left: 1rem;
         right: 1rem;
         min-width: auto;
+    }
+    
+    .image-preview {
+        max-width: 100%;
     }
 }

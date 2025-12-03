@@ -86,6 +86,19 @@
                             <textarea id="hero-subtitle" rows="3">Analog-era performance. Modern classics.
 A minimalist, industrial space built for people who love to drive.</textarea>
                         </div>
+                        <div class="form-group">
+                            <label>Hero Background Image</label>
+                            <div class="image-upload-container">
+                                <div class="image-preview" id="hero-bg-preview">
+                                    <img id="hero-bg-img" src="" alt="Current hero background">
+                                    <div class="image-overlay">Current Background</div>
+                                </div>
+                                <input type="file" id="hero-bg-upload" accept="image/*" style="display: none;">
+                                <button class="btn btn-secondary" onclick="document.getElementById('hero-bg-upload').click()">Upload New Image</button>
+                                <input type="text" id="hero-bg-url" placeholder="Or paste image URL" style="margin-top: 10px;">
+                                <p class="form-hint">Recommended: 1920x1080px or larger, landscape format</p>
+                            </div>
+                        </div>
                         <button class="btn btn-primary save-btn" data-section="hero">Save Changes</button>
                     </div>
                 </div>
@@ -154,6 +167,110 @@ A minimalist, industrial space built for people who love to drive.</textarea>
                             <label>Note</label>
                             <input type="text" id="fleet-note" value="Subject to availability, acquisition timing and member demand.">
                         </div>
+                        
+                        <h3 style="margin-top: 30px; margin-bottom: 20px;">Featured Cars</h3>
+                        <div id="fleet-cars-container">
+                            <!-- Car 1 -->
+                            <div class="car-editor">
+                                <h4>Car 1</h4>
+                                <div class="form-group">
+                                    <label>Car Name</label>
+                                    <input type="text" class="car-name" data-car="1" placeholder="e.g., 2002 BMW E39 M5">
+                                </div>
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <textarea class="car-description" data-car="1" rows="2" placeholder="Brief description of the car"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Car Image</label>
+                                    <div class="image-upload-container">
+                                        <div class="image-preview car-preview" data-car="1">
+                                            <img class="car-img" data-car="1" src="" alt="">
+                                            <div class="image-overlay">No image</div>
+                                        </div>
+                                        <input type="file" class="car-upload" data-car="1" accept="image/*" style="display: none;">
+                                        <button class="btn btn-secondary" onclick="document.querySelector('.car-upload[data-car=&quot;1&quot;]').click()">Upload Image</button>
+                                        <input type="text" class="car-url" data-car="1" placeholder="Or paste image URL" style="margin-top: 10px;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Car 2 -->
+                            <div class="car-editor">
+                                <h4>Car 2</h4>
+                                <div class="form-group">
+                                    <label>Car Name</label>
+                                    <input type="text" class="car-name" data-car="2" placeholder="e.g., 1999 Porsche 996 GT3">
+                                </div>
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <textarea class="car-description" data-car="2" rows="2" placeholder="Brief description of the car"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Car Image</label>
+                                    <div class="image-upload-container">
+                                        <div class="image-preview car-preview" data-car="2">
+                                            <img class="car-img" data-car="2" src="" alt="">
+                                            <div class="image-overlay">No image</div>
+                                        </div>
+                                        <input type="file" class="car-upload" data-car="2" accept="image/*" style="display: none;">
+                                        <button class="btn btn-secondary" onclick="document.querySelector('.car-upload[data-car=&quot;2&quot;]').click()">Upload Image</button>
+                                        <input type="text" class="car-url" data-car="2" placeholder="Or paste image URL" style="margin-top: 10px;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Car 3 -->
+                            <div class="car-editor">
+                                <h4>Car 3</h4>
+                                <div class="form-group">
+                                    <label>Car Name</label>
+                                    <input type="text" class="car-name" data-car="3" placeholder="e.g., 2004 Audi B6 S4">
+                                </div>
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <textarea class="car-description" data-car="3" rows="2" placeholder="Brief description of the car"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Car Image</label>
+                                    <div class="image-upload-container">
+                                        <div class="image-preview car-preview" data-car="3">
+                                            <img class="car-img" data-car="3" src="" alt="">
+                                            <div class="image-overlay">No image</div>
+                                        </div>
+                                        <input type="file" class="car-upload" data-car="3" accept="image/*" style="display: none;">
+                                        <button class="btn btn-secondary" onclick="document.querySelector('.car-upload[data-car=&quot;3&quot;]').click()">Upload Image</button>
+                                        <input type="text" class="car-url" data-car="3" placeholder="Or paste image URL" style="margin-top: 10px;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Car 4 -->
+                            <div class="car-editor">
+                                <h4>Car 4</h4>
+                                <div class="form-group">
+                                    <label>Car Name</label>
+                                    <input type="text" class="car-name" data-car="4" placeholder="e.g., 1998 Mercedes E55 AMG">
+                                </div>
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <textarea class="car-description" data-car="4" rows="2" placeholder="Brief description of the car"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Car Image</label>
+                                    <div class="image-upload-container">
+                                        <div class="image-preview car-preview" data-car="4">
+                                            <img class="car-img" data-car="4" src="" alt="">
+                                            <div class="image-overlay">No image</div>
+                                        </div>
+                                        <input type="file" class="car-upload" data-car="4" accept="image/*" style="display: none;">
+                                        <button class="btn btn-secondary" onclick="document.querySelector('.car-upload[data-car=&quot;4&quot;]').click()">Upload Image</button>
+                                        <input type="text" class="car-url" data-car="4" placeholder="Or paste image URL" style="margin-top: 10px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
                         <button class="btn btn-primary save-btn" data-section="fleet">Save Changes</button>
                     </div>
                 </div>

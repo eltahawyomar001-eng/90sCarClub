@@ -43,6 +43,7 @@ function showAdminPanel() {
     initNavigation();
     initSaveButtons();
     initLogout();
+    initImageUploads();
     loadContentFromAPI();
     loadSubmissionsFromAPI();
 }
@@ -105,6 +106,14 @@ function populateFormFields(content) {
         document.getElementById('hero-title-1').value = content.hero.title1 || '';
         document.getElementById('hero-title-2').value = content.hero.title2 || '';
         document.getElementById('hero-subtitle').value = content.hero.subtitle || '';
+        
+        // Hero background image
+        if (content.hero.backgroundImage) {
+            const heroBgImg = document.getElementById('hero-bg-img');
+            const heroBgUrl = document.getElementById('hero-bg-url');
+            if (heroBgImg) heroBgImg.src = content.hero.backgroundImage;
+            if (heroBgUrl) heroBgUrl.value = content.hero.backgroundImage;
+        }
     }
     
     // About
@@ -128,6 +137,24 @@ function populateFormFields(content) {
         document.getElementById('fleet-intro').value = content.fleet.intro || '';
         document.getElementById('fleet-details').value = content.fleet.details || '';
         document.getElementById('fleet-note').value = content.fleet.note || '';
+        
+        // Fleet cars
+        if (content.fleet.cars && Array.isArray(content.fleet.cars)) {
+            content.fleet.cars.forEach((car, index) => {
+                const i = index + 1;
+                const carName = document.querySelector(`.car-name[data-car="${i}"]`);
+                const carDesc = document.querySelector(`.car-description[data-car="${i}"]`);
+                const carImg = document.querySelector(`.car-img[data-car="${i}"]`);
+                const carUrl = document.querySelector(`.car-url[data-car="${i}"]`);
+                
+                if (carName) carName.value = car.name || '';
+                if (carDesc) carDesc.value = car.description || '';
+                if (car.image) {
+                    if (carImg) carImg.src = car.image;
+                    if (carUrl) carUrl.value = car.image;
+                }
+            });
+        }
     }
     
     // Membership
@@ -189,12 +216,31 @@ async function saveSectionToAPI(section) {
 }
 
 function buildContentObject() {
+    // Collect fleet cars data
+    const cars = [];
+    for (let i = 1; i <= 4; i++) {
+        const name = document.querySelector(`.car-name[data-car="${i}"]`)?.value || '';
+        const description = document.querySelector(`.car-description[data-car="${i}"]`)?.value || '';
+        const imageUrl = document.querySelector(`.car-url[data-car="${i}"]`)?.value || 
+                        document.querySelector(`.car-img[data-car="${i}"]`)?.src || '';
+        
+        if (name || description || imageUrl) {
+            cars.push({
+                name: name,
+                description: description,
+                image: imageUrl
+            });
+        }
+    }
+    
     return {
         hero: {
             tag: document.getElementById('hero-tag').value,
             title1: document.getElementById('hero-title-1').value,
             title2: document.getElementById('hero-title-2').value,
-            subtitle: document.getElementById('hero-subtitle').value
+            subtitle: document.getElementById('hero-subtitle').value,
+            backgroundImage: document.getElementById('hero-bg-url')?.value || 
+                           document.getElementById('hero-bg-img')?.src || ''
         },
         about: {
             title: document.getElementById('about-title').value,
@@ -211,7 +257,8 @@ function buildContentObject() {
             title: document.getElementById('fleet-title').value,
             intro: document.getElementById('fleet-intro').value,
             details: document.getElementById('fleet-details').value,
-            note: document.getElementById('fleet-note').value
+            note: document.getElementById('fleet-note').value,
+            cars: cars
         },
         membership: {
             title: document.getElementById('membership-title').value,
@@ -448,4 +495,91 @@ function showLoadingToast(message) {
 function hideLoadingToast() {
     const toast = document.getElementById('toast');
     toast.classList.remove('show');
+}
+
+/* ============================================
+   IMAGE UPLOAD SYSTEM
+   ============================================ */
+function initImageUploads() {
+    // Hero background image upload
+    const heroBgUpload = document.getElementById('hero-bg-upload');
+    const heroBgUrl = document.getElementById('hero-bg-url');
+    const heroBgPreview = document.getElementById('hero-bg-img');
+    
+    if (heroBgUpload) {
+        heroBgUpload.addEventListener('change', async (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                await uploadImage(file, heroBgPreview);
+            }
+        });
+    }
+    
+    if (heroBgUrl) {
+        heroBgUrl.addEventListener('input', (e) => {
+            const url = e.target.value.trim();
+            if (url) {
+                heroBgPreview.src = url;
+            }
+        });
+    }
+    
+    // Fleet car image uploads
+    for (let i = 1; i <= 4; i++) {
+        const carUpload = document.querySelector(`.car-upload[data-car="${i}"]`);
+        const carUrl = document.querySelector(`.car-url[data-car="${i}"]`);
+        const carPreview = document.querySelector(`.car-img[data-car="${i}"]`);
+        
+        if (carUpload) {
+            carUpload.addEventListener('change', async (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    await uploadImage(file, carPreview);
+                }
+            });
+        }
+        
+        if (carUrl) {
+            carUrl.addEventListener('input', (e) => {
+                const url = e.target.value.trim();
+                if (url && carPreview) {
+                    carPreview.src = url;
+                }
+            });
+        }
+    }
+}
+
+async function uploadImage(file, previewElement) {
+    try {
+        showLoadingToast('📤 Uploading image...');
+        
+        const formData = new FormData();
+        formData.append('file', file);
+        
+        const response = await fetch('/api/upload', {
+            method: 'POST',
+            body: formData
+        });
+        
+        if (!response.ok) {
+            throw new Error('Upload failed');
+        }
+        
+        const result = await response.json();
+        
+        if (result.url) {
+            previewElement.src = result.url;
+            hideLoadingToast();
+            showToast('✅ Image uploaded successfully!', 'success');
+            return result.url;
+        } else {
+            throw new Error('No URL returned');
+        }
+    } catch (error) {
+        console.error('Upload error:', error);
+        hideLoadingToast();
+        showToast('❌ Upload failed. Try pasting URL instead.', 'error');
+        return null;
+    }
 }

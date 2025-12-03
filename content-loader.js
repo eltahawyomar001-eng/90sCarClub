@@ -29,11 +29,17 @@ function applyContent(content) {
         const titleLine1 = document.querySelector('.hero-title .title-line:nth-child(1)');
         const titleLine2 = document.querySelector('.hero-title .title-line:nth-child(2)');
         const subtitle = document.querySelector('.hero-subtitle');
+        const heroSection = document.querySelector('.hero');
         
         if (tagText && content.hero.tag) tagText.textContent = content.hero.tag;
         if (titleLine1 && content.hero.title1) titleLine1.textContent = content.hero.title1;
         if (titleLine2 && content.hero.title2) titleLine2.textContent = content.hero.title2;
         if (subtitle && content.hero.subtitle) subtitle.innerHTML = content.hero.subtitle;
+        
+        // Apply hero background image
+        if (heroSection && content.hero.backgroundImage) {
+            heroSection.style.backgroundImage = `linear-gradient(rgba(26, 25, 24, 0.7), rgba(26, 25, 24, 0.7)), url('${content.hero.backgroundImage}')`;
+        }
     }
     
     // About Section
@@ -71,6 +77,27 @@ function applyContent(content) {
         if (fleetIntro && content.fleet.intro) fleetIntro.textContent = content.fleet.intro;
         if (fleetDetails && content.fleet.details) fleetDetails.innerHTML = `<strong>${content.fleet.details.split(',')[0]}</strong>${content.fleet.details.substring(content.fleet.details.indexOf(','))}`;
         if (fleetNote && content.fleet.note) fleetNote.textContent = content.fleet.note;
+        
+        // Apply fleet car images
+        if (content.fleet.cars && Array.isArray(content.fleet.cars)) {
+            const fleetGallery = document.querySelector('.fleet-gallery');
+            if (fleetGallery && content.fleet.cars.length > 0) {
+                fleetGallery.innerHTML = ''; // Clear existing
+                
+                content.fleet.cars.forEach((car, index) => {
+                    if (car.image || car.name) {
+                        const carCard = document.createElement('div');
+                        carCard.className = 'fleet-car';
+                        carCard.innerHTML = `
+                            <img src="${car.image || 'stock photos/placeholder.jpg'}" alt="${car.name || 'Car'}">
+                            <h3>${car.name || ''}</h3>
+                            ${car.description ? `<p>${car.description}</p>` : ''}
+                        `;
+                        fleetGallery.appendChild(carCard);
+                    }
+                });
+            }
+        }
     }
     
     // Membership Section
