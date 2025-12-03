@@ -472,8 +472,7 @@ body.loading {
     justify-content: flex-start;
     padding-top: 12vh;
     overflow: hidden;
-    background: url('stock photos/AdobeStock_788813908_Editorial_Use_Only.jpeg') no-repeat center bottom;
-    background-size: cover;
+    background: #000000;
 }
 
 .hero-content {
@@ -531,7 +530,22 @@ body.loading {
     justify-content: center;
     gap: var(--space-md);
     flex-wrap: wrap;
-    margin-bottom: var(--space-xl);
+}
+
+/* Hero Car - positioned at bottom, full width */
+.hero-car {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.hero-car-img {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
 }
 
 /* ============================================
