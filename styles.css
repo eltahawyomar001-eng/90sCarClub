@@ -536,66 +536,49 @@ body.loading {
    ABOUT SECTION
    ============================================ */
 .about {
-    padding: var(--space-3xl) 0;
+    padding: var(--space-2xl) 0;
     background: var(--color-bg);
-}
-
-.about-header {
-    margin-bottom: var(--space-xl);
 }
 
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-2xl);
-    align-items: center;
+    gap: var(--space-xl);
+    align-items: start;
 }
 
-.about-intro {
-    padding-right: var(--space-lg);
+.about-content .section-tag {
+    margin-bottom: var(--space-sm);
 }
 
-.about-content {
-    padding-right: var(--space-lg);
+.about-content .section-title {
+    margin-bottom: var(--space-md);
 }
 
 .about-lead {
     font-family: var(--font-serif);
-    font-size: var(--text-xl);
+    font-size: var(--text-lg);
     font-weight: 300;
     line-height: 1.7;
     color: var(--color-text);
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
 }
 
 .about-content p {
     color: var(--color-text-muted);
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-sm);
     line-height: 1.7;
 }
 
 .about-image {
-    position: relative;
-    overflow: hidden;
     border-radius: 4px;
+    overflow: hidden;
 }
 
 .about-img {
     width: 100%;
     height: auto;
     display: block;
-}
-
-.about-stats {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-lg);
-    padding-top: var(--space-xl);
-    border-top: 1px solid var(--color-border);
-}
-
-.stat {
-    text-align: center;
 }
 
 .stat-number {
@@ -620,39 +603,43 @@ body.loading {
    LOCATION SECTION
    ============================================ */
 .location {
-    padding: var(--space-3xl) 0;
+    padding: var(--space-2xl) 0;
     background: var(--color-bg-alt);
 }
 
 .location-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-2xl);
-    align-items: center;
+    gap: var(--space-xl);
+    align-items: start;
+}
+
+.location-content .section-tag {
+    margin-bottom: var(--space-sm);
+}
+
+.location-content .section-title {
+    margin-bottom: var(--space-md);
 }
 
 .location-lead {
     font-family: var(--font-serif);
-    font-size: var(--text-xl);
+    font-size: var(--text-lg);
     font-weight: 300;
     line-height: 1.7;
     color: var(--color-text);
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
 }
 
 .location-content p {
     color: var(--color-text-muted);
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-sm);
     line-height: 1.7;
 }
 
 .location-image {
-    position: relative;
     border-radius: 4px;
     overflow: hidden;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
 }
 
 .location-img {
@@ -665,51 +652,41 @@ body.loading {
    FLEET SECTION
    ============================================ */
 .fleet {
-    padding: var(--space-3xl) 0;
+    padding: var(--space-2xl) 0;
     background: var(--color-bg);
 }
 
 .fleet-header {
-    max-width: 600px;
-    margin-bottom: var(--space-2xl);
+    max-width: 800px;
+    margin: 0 auto var(--space-lg);
+    text-align: center;
 }
 
 .fleet-intro {
-    font-size: var(--text-lg);
+    font-size: var(--text-base);
     color: var(--color-text-muted);
-}
-
-.fleet-gallery {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: var(--space-md);
-    padding: 0 var(--container-padding);
-    max-width: 1600px;
-    margin: 0 auto var(--space-xl);
+    margin-bottom: var(--space-sm);
 }
 
 /* Simple 3-image gallery for Fleet Philosophy */
 .fleet-gallery.fleet-gallery-simple {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-lg);
+    gap: var(--space-md);
+    max-width: 1200px;
+    margin: 0 auto var(--space-lg);
     padding: 0 var(--container-padding);
-    max-width: 1400px;
-    margin: 0 auto var(--space-xl);
 }
 
 .fleet-gallery-simple .gallery-item {
-    grid-column: span 1 !important;
     border-radius: 4px;
     overflow: hidden;
-    box-shadow: none;
 }
 
 .fleet-gallery-simple .gallery-image-wrapper {
     aspect-ratio: 16/10;
     position: relative;
     overflow: hidden;
-    padding-bottom: 0 !important;
     background: var(--color-bg-dark);
 }
 
@@ -730,7 +707,6 @@ body.loading {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
-    padding-top: var(--space-lg);
 }
 
 .fleet-details p {
@@ -749,38 +725,35 @@ body.loading {
    WAITLIST SECTION
    ============================================ */
 .waitlist {
-    padding: var(--space-3xl) 0;
+    padding: var(--space-2xl) 0;
     background: var(--color-bg-alt);
 }
 
 .waitlist-header {
     max-width: 700px;
-    margin: 0 auto var(--space-3xl);
+    margin: 0 auto var(--space-lg);
     text-align: center;
 }
 
 .waitlist-intro {
-    font-size: var(--text-lg);
+    font-size: var(--text-base);
     color: var(--color-text-muted);
     line-height: 1.7;
 }
 
 .waitlist-form {
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
     background: var(--color-bg);
-    padding: var(--space-3xl);
-    border-radius: 8px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-    border-top: 4px solid var(--color-accent);
+    padding: var(--space-xl);
+    border-radius: 4px;
 }
 
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-lg);
-    margin-bottom: var(--space-lg);
-    align-items: end;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
 }
 
 .waitlist-form select {
@@ -788,18 +761,16 @@ body.loading {
     padding: 1em 1.25em;
     font-family: var(--font-sans);
     font-size: var(--text-base);
-    color: var(--color-text);
-    background: var(--color-white);
+    color: #1A1918;
+    background: #FFFFFF;
     border: 2px solid var(--color-border);
     border-radius: 4px;
-    transition: all var(--duration-fast) var(--ease-smooth);
     cursor: pointer;
 }
 
 .waitlist-form select:focus {
     outline: none;
     border-color: var(--color-accent);
-    box-shadow: 0 0 0 3px rgba(250, 34, 35, 0.1);
 }
 
 /* ============================================
@@ -1061,37 +1032,37 @@ body.loading {
    MEMBERSHIP SECTION
    ============================================ */
 .membership {
-    padding: var(--space-3xl) 0;
+    padding: var(--space-2xl) 0;
     background: var(--color-bg);
-}
-
-.membership-header {
-    margin-bottom: var(--space-xl);
 }
 
 .membership-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-2xl);
+    gap: var(--space-xl);
     align-items: start;
 }
 
-.membership-content {
-    padding-right: var(--space-lg);
+.membership-content .section-tag {
+    margin-bottom: var(--space-sm);
+}
+
+.membership-content .section-title {
+    margin-bottom: var(--space-md);
 }
 
 .membership-lead {
     font-family: var(--font-serif);
-    font-size: var(--text-xl);
+    font-size: var(--text-lg);
     font-weight: 300;
     line-height: 1.6;
     color: var(--color-text);
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
 }
 
 .membership-requirements,
 .membership-benefits {
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
 }
 
 .membership-requirements h4,
