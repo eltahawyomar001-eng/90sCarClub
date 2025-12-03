@@ -1065,6 +1065,10 @@ body.loading {
     background: var(--color-bg);
 }
 
+.membership-header {
+    margin-bottom: var(--space-xl);
+}
+
 .membership-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1076,16 +1080,6 @@ body.loading {
     padding-right: var(--space-lg);
 }
 
-.membership-content .section-title {
-    font-family: var(--font-serif);
-    font-size: var(--text-2xl);
-    font-weight: 300;
-    line-height: 1.2;
-    color: var(--color-text);
-    margin-bottom: var(--space-lg);
-    display: block;
-}
-
 .membership-lead {
     font-family: var(--font-serif);
     font-size: var(--text-xl);
@@ -1093,7 +1087,6 @@ body.loading {
     line-height: 1.6;
     color: var(--color-text);
     margin-bottom: var(--space-lg);
-    display: block;
 }
 
 .membership-requirements,
