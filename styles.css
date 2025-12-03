@@ -465,14 +465,14 @@ body.loading {
    ============================================ */
 .hero {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     padding-top: 12vh;
     overflow: hidden;
-    background: #12161d !important;
+    background: #000000 !important;
 }
 
 .hero-content {
@@ -535,17 +535,17 @@ body.loading {
 
 /* Hero Car Image - directly under buttons, tight spacing */
 .hero-car {
-    margin-top: 1rem;
+    margin-top: 2rem;
     display: flex;
     justify-content: center;
     width: 100%;
 }
 
 .hero-car-img {
-    max-width: 480px;
-    width: 75%;
+    max-width: 600px;
+    width: 80%;
     height: auto;
-    border-radius: 0;
+    border-radius: 4px;
 }
 
 /* ============================================
