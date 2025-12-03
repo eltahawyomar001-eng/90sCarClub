@@ -472,7 +472,7 @@ body.loading {
     justify-content: flex-start;
     padding-top: 12vh;
     overflow: hidden;
-    background: #000000;
+    background: linear-gradient(to bottom, #000000 0%, #1a1d24 60%, #1a1d24 100%);
 }
 
 .hero-content {
