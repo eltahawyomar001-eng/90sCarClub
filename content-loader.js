@@ -133,14 +133,28 @@ function applyContent(content) {
 }
 
 function applyBranding(branding) {
-    // Apply logo - only if a valid URL is provided
+    // Apply logo - only if it's a valid image URL
+    // Must be http/https and must be an actual image file (not a page URL)
     if (branding.logo && branding.logo.trim() !== '') {
-        const logos = document.querySelectorAll('.nav-logo-img, .loader-logo');
-        logos.forEach(logo => {
-            if (logo.tagName === 'IMG') {
-                logo.src = branding.logo;
-            }
-        });
+        const logoUrl = branding.logo.trim().toLowerCase();
+        const isValidImageUrl = (
+            (logoUrl.startsWith('http://') || logoUrl.startsWith('https://')) &&
+            !logoUrl.includes('.html') &&
+            !logoUrl.includes('/admin') &&
+            (logoUrl.includes('.svg') || logoUrl.includes('.png') || 
+             logoUrl.includes('.jpg') || logoUrl.includes('.jpeg') || 
+             logoUrl.includes('.webp') || logoUrl.includes('.gif') ||
+             logoUrl.includes('blob.vercel-storage.com'))
+        );
+        
+        if (isValidImageUrl) {
+            const logos = document.querySelectorAll('.nav-logo-img, .loader-logo');
+            logos.forEach(logo => {
+                if (logo.tagName === 'IMG') {
+                    logo.src = branding.logo;
+                }
+            });
+        }
     }
     
     // Apply colors via CSS variables
