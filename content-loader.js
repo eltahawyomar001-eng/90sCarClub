@@ -302,6 +302,37 @@ function applyContactInfo(contact) {
         }
     }
     
+    // Add phone number
+    if (contact.phone) {
+        const phoneEl = footer.querySelector('.contact-phone');
+        if (phoneEl) {
+            phoneEl.innerHTML = `<a href="tel:${contact.phone}">${contact.phone}</a>`;
+        }
+    }
+    
+    // Add address
+    if (contact.address) {
+        const addressEl = footer.querySelector('.contact-address');
+        if (addressEl) {
+            addressEl.textContent = contact.address;
+        }
+    }
+    
+    // Add operating hours
+    if (contact.hours) {
+        const hoursEl = footer.querySelector('.contact-hours');
+        if (hoursEl) {
+            hoursEl.textContent = contact.hours;
+        }
+    }
+    
+    // Hide contact column if nothing to show
+    const contactCol = footer.querySelector('.footer-contact');
+    if (contactCol) {
+        const hasContent = contact.phone || contact.address || contact.hours;
+        contactCol.style.display = hasContent ? 'block' : 'none';
+    }
+    
     // Add social media links if display is enabled
     if (contact.social && contact.social.display) {
         // Check if social links section exists

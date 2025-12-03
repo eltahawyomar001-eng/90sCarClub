@@ -1527,6 +1527,21 @@ body.loading {
     color: var(--color-white);
 }
 
+.footer-contact p {
+    font-size: var(--text-sm);
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: var(--space-sm);
+    line-height: 1.5;
+}
+
+.footer-contact a {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-contact a:hover {
+    color: var(--color-white);
+}
+
 .footer-bottom {
     padding-top: var(--space-xl);
     border-top: 1px solid var(--color-border-dark);
