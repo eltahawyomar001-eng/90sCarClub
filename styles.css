@@ -1560,6 +1560,10 @@ body.loading {
         grid-template-columns: 1fr !important;
     }
     
+    .fleet-gallery-simple .gallery-image-wrapper {
+        aspect-ratio: 16/9;
+    }
+    
     .form-row {
         grid-template-columns: 1fr;
     }
