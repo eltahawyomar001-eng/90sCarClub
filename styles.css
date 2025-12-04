@@ -723,7 +723,7 @@ body.loading {
 }
 
 .fleet-gallery-simple .gallery-image-wrapper {
-    aspect-ratio: 16/10;
+    aspect-ratio: 4/3;
     position: relative;
     overflow: hidden;
     background: var(--color-bg-dark);
@@ -736,6 +736,7 @@ body.loading {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
 }
 
 .fleet-gallery-simple .gallery-info {
@@ -1030,7 +1031,8 @@ body.loading {
    ============================================ */
 .membership {
     padding: var(--section-padding) 0;
-    background: var(--color-bg);
+    background: var(--color-bg-alt);
+    border-top: 1px solid var(--color-border);
 }
 
 .membership-grid {
