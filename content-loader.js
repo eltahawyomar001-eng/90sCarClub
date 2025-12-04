@@ -36,6 +36,7 @@ async function loadContent() {
             if (content.location) applyLocation(content.location);
             if (content.fleet) applyFleet(content.fleet);
             if (content.membership) applyMembership(content.membership);
+            if (content.waitlist) applyWaitlist(content.waitlist);
             if (content.contact) applyContactInfo(content.contact);
             
             // Apply gallery images
@@ -91,6 +92,12 @@ function applyAbout(about) {
     const section = document.querySelector('.about');
     if (!section) return;
     
+    // Section tag
+    if (about.tag) {
+        const tag = section.querySelector('.section-tag');
+        if (tag) tag.textContent = about.tag;
+    }
+    
     // Text content
     if (about.title) {
         const title = section.querySelector('.section-title');
@@ -116,6 +123,12 @@ function applyLocation(location) {
     const section = document.querySelector('.location');
     if (!section) return;
     
+    // Section tag
+    if (location.tag) {
+        const tag = section.querySelector('.section-tag');
+        if (tag) tag.textContent = location.tag;
+    }
+    
     // Text content
     if (location.title) {
         const title = section.querySelector('.section-title');
@@ -140,6 +153,12 @@ function applyLocation(location) {
 function applyFleet(fleet) {
     const section = document.querySelector('.fleet');
     if (!section) return;
+    
+    // Section tag
+    if (fleet.tag) {
+        const tag = section.querySelector('.section-tag');
+        if (tag) tag.textContent = fleet.tag;
+    }
     
     // Text content
     if (fleet.title) {
@@ -191,6 +210,12 @@ function applyMembership(membership) {
     const section = document.querySelector('.membership');
     if (!section) return;
     
+    // Section tag
+    if (membership.tag) {
+        const tag = section.querySelector('.section-tag');
+        if (tag) tag.textContent = membership.tag;
+    }
+    
     // Text content
     if (membership.title) {
         const title = section.querySelector('.section-title');
@@ -205,6 +230,17 @@ function applyMembership(membership) {
     if (membership.image && isValidImageUrl(membership.image)) {
         const img = section.querySelector('.membership-img');
         if (img) img.src = membership.image;
+    }
+}
+
+function applyWaitlist(waitlist) {
+    const section = document.querySelector('.waitlist');
+    if (!section) return;
+    
+    // Section tag
+    if (waitlist.tag) {
+        const tag = section.querySelector('.section-tag');
+        if (tag) tag.textContent = waitlist.tag;
     }
 }
 

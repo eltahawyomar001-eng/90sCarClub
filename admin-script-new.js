@@ -185,6 +185,7 @@ function populateFormFields(content) {
     
     // About
     if (content.about) {
+        document.getElementById('about-tag').value = content.about.tag || 'About the Club';
         document.getElementById('about-title').value = content.about.title || '';
         document.getElementById('about-lead').value = content.about.lead || '';
         document.getElementById('about-p1').value = content.about.p1 || '';
@@ -193,6 +194,7 @@ function populateFormFields(content) {
     
     // Location
     if (content.location) {
+        document.getElementById('location-tag').value = content.location.tag || 'Location';
         document.getElementById('location-title').value = content.location.title || '';
         document.getElementById('location-lead').value = content.location.lead || '';
         document.getElementById('location-text').value = content.location.text || '';
@@ -200,6 +202,7 @@ function populateFormFields(content) {
     
     // Fleet
     if (content.fleet) {
+        document.getElementById('fleet-tag').value = content.fleet.tag || 'Fleet Philosophy';
         document.getElementById('fleet-title').value = content.fleet.title || '';
         document.getElementById('fleet-intro').value = content.fleet.intro || '';
         document.getElementById('fleet-list-title').value = content.fleet.listTitle || 'Representative Fleet List';
@@ -239,8 +242,14 @@ function populateFormFields(content) {
     
     // Membership
     if (content.membership) {
+        document.getElementById('membership-tag').value = content.membership.tag || 'Membership';
         document.getElementById('membership-title').value = content.membership.title || '';
         document.getElementById('membership-lead').value = content.membership.lead || '';
+    }
+    
+    // Waitlist tag
+    if (content.waitlist && content.waitlist.tag) {
+        document.getElementById('waitlist-tag').value = content.waitlist.tag;
     }
     
     // Gallery
@@ -448,17 +457,20 @@ function buildContentObject() {
             backgroundImage: getValidImageUrl('hero-bg-url', 'hero-bg-img')
         },
         about: {
+            tag: document.getElementById('about-tag').value,
             title: document.getElementById('about-title').value,
             lead: document.getElementById('about-lead').value,
             p1: document.getElementById('about-p1').value,
             p2: document.getElementById('about-p2').value
         },
         location: {
+            tag: document.getElementById('location-tag').value,
             title: document.getElementById('location-title').value,
             lead: document.getElementById('location-lead').value,
             text: document.getElementById('location-text').value
         },
         fleet: {
+            tag: document.getElementById('fleet-tag').value,
             title: document.getElementById('fleet-title').value,
             intro: document.getElementById('fleet-intro').value,
             listTitle: document.getElementById('fleet-list-title').value,
@@ -473,8 +485,12 @@ function buildContentObject() {
             cars: cars
         },
         membership: {
+            tag: document.getElementById('membership-tag').value,
             title: document.getElementById('membership-title').value,
             lead: document.getElementById('membership-lead').value
+        },
+        waitlist: {
+            tag: document.getElementById('waitlist-tag').value
         },
         gallery: galleryImages,
         branding: {
