@@ -338,6 +338,15 @@ function populateFormFields(content) {
             if (display) display.checked = content.contact.social.display !== false;
         }
     }
+    
+    // Footer content
+    if (content.footer) {
+        const tagline = document.getElementById('footer-tagline');
+        const copyright = document.getElementById('footer-copyright');
+        
+        if (tagline) tagline.value = content.footer.tagline || 'A private drivers\' club for analog-era enthusiasts.';
+        if (copyright) copyright.value = content.footer.copyright || '© 2025 Brooklyn Vintage Car Club. All rights reserved.';
+    }
 }
 
 function initSaveButtons() {
@@ -518,6 +527,10 @@ function buildContentObject() {
                 youtube: document.getElementById('social-youtube')?.value || '',
                 display: document.getElementById('social-display')?.checked || false
             }
+        },
+        footer: {
+            tagline: document.getElementById('footer-tagline')?.value || 'A private drivers\' club for analog-era enthusiasts.',
+            copyright: document.getElementById('footer-copyright')?.value || '© 2025 Brooklyn Vintage Car Club. All rights reserved.'
         }
     };
 }

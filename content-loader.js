@@ -38,6 +38,7 @@ async function loadContent() {
             if (content.membership) applyMembership(content.membership);
             if (content.waitlist) applyWaitlist(content.waitlist);
             if (content.contact) applyContactInfo(content.contact);
+            if (content.footer) applyFooter(content.footer);
             
             // Apply gallery images
             if (content.gallery) applyGallery(content.gallery);
@@ -290,4 +291,22 @@ function applyContactInfo(contact) {
         if (hoursEl) hoursEl.textContent = contact.hours;
     }
 }
+
+function applyFooter(footer) {
+    const footerEl = document.querySelector('.footer');
+    if (!footerEl) return;
+    
+    // Footer tagline
+    if (footer.tagline) {
+        const tagline = footerEl.querySelector('.footer-tagline');
+        if (tagline) tagline.innerHTML = footer.tagline.replace(/\n/g, '<br>');
+    }
+    
+    // Copyright text
+    if (footer.copyright) {
+        const copyright = footerEl.querySelector('.footer-bottom p');
+        if (copyright) copyright.innerHTML = footer.copyright;
+    }
+}
+
 
