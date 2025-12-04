@@ -167,8 +167,17 @@ function applyFleet(fleet) {
         if (note) note.textContent = fleet.note;
     }
     
-    // Fleet gallery images
-    if (fleet.images && Array.isArray(fleet.images)) {
+    // Fleet gallery images (new galleryImages array)
+    if (fleet.galleryImages && Array.isArray(fleet.galleryImages)) {
+        const galleryImages = section.querySelectorAll('.fleet-gallery-simple .gallery-item img');
+        fleet.galleryImages.forEach((imgUrl, index) => {
+            if (galleryImages[index] && isValidImageUrl(imgUrl)) {
+                galleryImages[index].src = imgUrl;
+            }
+        });
+    }
+    // Legacy support for old 'images' key
+    else if (fleet.images && Array.isArray(fleet.images)) {
         const galleryImages = section.querySelectorAll('.fleet-gallery-simple .gallery-item img');
         fleet.images.forEach((imgUrl, index) => {
             if (galleryImages[index] && isValidImageUrl(imgUrl)) {

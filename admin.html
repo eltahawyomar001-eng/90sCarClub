@@ -199,6 +199,55 @@ A minimalist, industrial space built for people who love to drive.</textarea>
                             <input type="text" id="fleet-note" value="Subject to availability, acquisition timing and member demand.">
                         </div>
                         
+                        <h3 style="margin-top: 30px; margin-bottom: 20px;">Fleet Gallery Images (3 images shown on website)</h3>
+                        <div class="fleet-gallery-editor">
+                            <!-- Gallery Image 1 -->
+                            <div class="form-group">
+                                <label>Gallery Image 1 (Left)</label>
+                                <div class="image-upload-container">
+                                    <div class="image-preview">
+                                        <img id="fleet-gallery-img-1" src="stock photos/BMW_Fleet_car.jpeg" alt="">
+                                        <div class="image-overlay">Image 1</div>
+                                    </div>
+                                    <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                                        <input type="file" id="fleet-gallery-upload-1" accept="image/*" style="display: none;">
+                                        <button class="btn btn-secondary" onclick="document.getElementById('fleet-gallery-upload-1').click()">Upload Image</button>
+                                    </div>
+                                    <input type="text" id="fleet-gallery-url-1" placeholder="Or paste image URL" style="margin-top: 10px;">
+                                </div>
+                            </div>
+                            <!-- Gallery Image 2 -->
+                            <div class="form-group">
+                                <label>Gallery Image 2 (Center)</label>
+                                <div class="image-upload-container">
+                                    <div class="image-preview">
+                                        <img id="fleet-gallery-img-2" src="stock photos/Fleet_car.jpeg" alt="">
+                                        <div class="image-overlay">Image 2</div>
+                                    </div>
+                                    <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                                        <input type="file" id="fleet-gallery-upload-2" accept="image/*" style="display: none;">
+                                        <button class="btn btn-secondary" onclick="document.getElementById('fleet-gallery-upload-2').click()">Upload Image</button>
+                                    </div>
+                                    <input type="text" id="fleet-gallery-url-2" placeholder="Or paste image URL" style="margin-top: 10px;">
+                                </div>
+                            </div>
+                            <!-- Gallery Image 3 -->
+                            <div class="form-group">
+                                <label>Gallery Image 3 (Right)</label>
+                                <div class="image-upload-container">
+                                    <div class="image-preview">
+                                        <img id="fleet-gallery-img-3" src="logos/AdobeStock_1679661205_Editorial_Use_Only.png" alt="">
+                                        <div class="image-overlay">Image 3</div>
+                                    </div>
+                                    <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                                        <input type="file" id="fleet-gallery-upload-3" accept="image/*" style="display: none;">
+                                        <button class="btn btn-secondary" onclick="document.getElementById('fleet-gallery-upload-3').click()">Upload Image</button>
+                                    </div>
+                                    <input type="text" id="fleet-gallery-url-3" placeholder="Or paste image URL" style="margin-top: 10px;">
+                                </div>
+                            </div>
+                        </div>
+                        
                         <h3 style="margin-top: 30px; margin-bottom: 20px;">Featured Cars</h3>
                         <div id="fleet-cars-container">
                             <!-- Car 1 -->

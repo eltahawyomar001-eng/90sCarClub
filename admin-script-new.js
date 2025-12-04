@@ -207,6 +207,17 @@ function populateFormFields(content) {
         document.getElementById('fleet-car-list').value = content.fleet.carList || '';
         document.getElementById('fleet-note').value = content.fleet.note || '';
         
+        // Fleet gallery images
+        if (content.fleet.galleryImages && Array.isArray(content.fleet.galleryImages)) {
+            content.fleet.galleryImages.forEach((imgUrl, index) => {
+                const i = index + 1;
+                const imgEl = document.getElementById(`fleet-gallery-img-${i}`);
+                const urlEl = document.getElementById(`fleet-gallery-url-${i}`);
+                if (imgEl && imgUrl) imgEl.src = imgUrl;
+                if (urlEl && imgUrl) urlEl.value = imgUrl;
+            });
+        }
+        
         // Fleet cars
         if (content.fleet.cars && Array.isArray(content.fleet.cars)) {
             content.fleet.cars.forEach((car, index) => {
@@ -454,6 +465,11 @@ function buildContentObject() {
             details: document.getElementById('fleet-details').value,
             carList: document.getElementById('fleet-car-list').value,
             note: document.getElementById('fleet-note').value,
+            galleryImages: [
+                getValidImageUrl('fleet-gallery-url-1', 'fleet-gallery-img-1') || 'stock photos/BMW_Fleet_car.jpeg',
+                getValidImageUrl('fleet-gallery-url-2', 'fleet-gallery-img-2') || 'stock photos/Fleet_car.jpeg',
+                getValidImageUrl('fleet-gallery-url-3', 'fleet-gallery-img-3') || 'logos/AdobeStock_1679661205_Editorial_Use_Only.png'
+            ],
             cars: cars
         },
         membership: {
@@ -745,6 +761,32 @@ function initImageUploads() {
                 heroBgPreview.src = url;
             }
         });
+    }
+    
+    // Fleet gallery image uploads (3 images)
+    for (let i = 1; i <= 3; i++) {
+        const galleryUpload = document.getElementById(`fleet-gallery-upload-${i}`);
+        const galleryUrl = document.getElementById(`fleet-gallery-url-${i}`);
+        const galleryPreview = document.getElementById(`fleet-gallery-img-${i}`);
+        
+        if (galleryUpload) {
+            galleryUpload.addEventListener('change', async (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    await uploadImage(file, galleryPreview);
+                    if (galleryUrl) galleryUrl.value = galleryPreview.src;
+                }
+            });
+        }
+        
+        if (galleryUrl) {
+            galleryUrl.addEventListener('input', (e) => {
+                const url = e.target.value.trim();
+                if (url && galleryPreview) {
+                    galleryPreview.src = url;
+                }
+            });
+        }
     }
     
     // Fleet car image uploads (8 cars)
