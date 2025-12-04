@@ -207,8 +207,19 @@ function populateFormFields(content) {
         document.getElementById('fleet-intro').value = content.fleet.intro || '';
         document.getElementById('fleet-list-title').value = content.fleet.listTitle || 'Representative Fleet List';
         document.getElementById('fleet-details').value = content.fleet.details || '';
-        document.getElementById('fleet-car-list').value = content.fleet.carList || '';
         document.getElementById('fleet-note').value = content.fleet.note || '';
+        
+        // Car brands (new individual fields)
+        if (content.fleet.carBrands) {
+            document.getElementById('fleet-porsche').value = content.fleet.carBrands.porsche || '';
+            document.getElementById('fleet-bmw').value = content.fleet.carBrands.bmw || '';
+            document.getElementById('fleet-mercedes').value = content.fleet.carBrands.mercedes || '';
+            document.getElementById('fleet-ferrari').value = content.fleet.carBrands.ferrari || '';
+            document.getElementById('fleet-aston').value = content.fleet.carBrands.aston || '';
+            document.getElementById('fleet-japanese').value = content.fleet.carBrands.japanese || '';
+            document.getElementById('fleet-other-brand').value = content.fleet.carBrands.otherBrand || '';
+            document.getElementById('fleet-other-models').value = content.fleet.carBrands.otherModels || '';
+        }
         
         // Fleet gallery images
         if (content.fleet.galleryImages && Array.isArray(content.fleet.galleryImages)) {
@@ -484,8 +495,17 @@ function buildContentObject() {
             intro: document.getElementById('fleet-intro').value,
             listTitle: document.getElementById('fleet-list-title').value,
             details: document.getElementById('fleet-details').value,
-            carList: document.getElementById('fleet-car-list').value,
             note: document.getElementById('fleet-note').value,
+            carBrands: {
+                porsche: document.getElementById('fleet-porsche').value,
+                bmw: document.getElementById('fleet-bmw').value,
+                mercedes: document.getElementById('fleet-mercedes').value,
+                ferrari: document.getElementById('fleet-ferrari').value,
+                aston: document.getElementById('fleet-aston').value,
+                japanese: document.getElementById('fleet-japanese').value,
+                otherBrand: document.getElementById('fleet-other-brand').value,
+                otherModels: document.getElementById('fleet-other-models').value
+            },
             galleryImages: [
                 getValidImageUrl('fleet-gallery-url-1', 'fleet-gallery-img-1') || 'stock photos/BMW_Fleet_car.jpeg',
                 getValidImageUrl('fleet-gallery-url-2', 'fleet-gallery-img-2') || 'stock photos/Fleet_car.jpeg',

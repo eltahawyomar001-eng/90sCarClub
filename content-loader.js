@@ -178,10 +178,31 @@ function applyFleet(fleet) {
         const introText = section.querySelector('.fleet-intro-text');
         if (introText) introText.textContent = fleet.details;
     }
-    if (fleet.carList) {
+    
+    // Car brands (new individual fields)
+    if (fleet.carBrands) {
+        const carListEl = section.querySelector('.fleet-car-list');
+        if (carListEl) {
+            let html = '';
+            const brands = fleet.carBrands;
+            if (brands.porsche) html += `<p><strong>Porsche:</strong> ${brands.porsche}</p>`;
+            if (brands.bmw) html += `<p><strong>BMW:</strong> ${brands.bmw}</p>`;
+            if (brands.mercedes) html += `<p><strong>Mercedes:</strong> ${brands.mercedes}</p>`;
+            if (brands.ferrari) html += `<p><strong>Ferrari:</strong> ${brands.ferrari}</p>`;
+            if (brands.aston) html += `<p><strong>Aston Martin:</strong> ${brands.aston}</p>`;
+            if (brands.japanese) html += `<p><strong>Acura/Honda/Nissan:</strong> ${brands.japanese}</p>`;
+            if (brands.otherBrand && brands.otherModels) {
+                html += `<p><strong>${brands.otherBrand}:</strong> ${brands.otherModels}</p>`;
+            }
+            if (html) carListEl.innerHTML = html;
+        }
+    }
+    // Legacy support for old carList HTML field
+    else if (fleet.carList) {
         const carListEl = section.querySelector('.fleet-car-list');
         if (carListEl) carListEl.innerHTML = fleet.carList;
     }
+    
     if (fleet.note) {
         const note = section.querySelector('.fleet-note');
         if (note) note.textContent = fleet.note;

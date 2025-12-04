@@ -197,15 +197,43 @@ A minimalist, industrial space built for people who love to drive.</textarea>
                             <label>Fleet Details (acquisition plan text)</label>
                             <textarea id="fleet-details" rows="2">Launch with 8–10 cars, grow to 12 by the end of year two, and expand to 18 as membership scales.</textarea>
                         </div>
+                        
+                        <h3 style="margin-top: 20px; margin-bottom: 15px;">Car List by Brand</h3>
+                        <p style="color: #888; font-size: 13px; margin-bottom: 15px;">Enter car models for each brand. Leave blank to hide a brand.</p>
+                        
                         <div class="form-group">
-                            <label>Car List (HTML - use &lt;p&gt;&lt;strong&gt;Brand:&lt;/strong&gt; models&lt;/p&gt; format)</label>
-                            <textarea id="fleet-car-list" rows="8"><p><strong>Porsche:</strong> 964, 993, 996 GT3, 997 Turbo, 944 Turbo</p>
-<p><strong>BMW:</strong> E36 M3, E46 M3, E39 M5, Z3 M Coupe</p>
-<p><strong>Mercedes:</strong> CLK63 Black Series</p>
-<p><strong>Ferrari:</strong> F430</p>
-<p><strong>Aston Martin:</strong> V8 Vantage (manual)</p>
-<p><strong>Acura/Honda/Nissan:</strong> NSX (NA1), S2000, 300ZX Twin Turbo</p></textarea>
+                            <label>Porsche Models</label>
+                            <input type="text" id="fleet-porsche" value="964, 993, 996 GT3, 997 Turbo, 944 Turbo">
                         </div>
+                        <div class="form-group">
+                            <label>BMW Models</label>
+                            <input type="text" id="fleet-bmw" value="E36 M3, E46 M3, E39 M5, Z3 M Coupe">
+                        </div>
+                        <div class="form-group">
+                            <label>Mercedes Models</label>
+                            <input type="text" id="fleet-mercedes" value="CLK63 Black Series">
+                        </div>
+                        <div class="form-group">
+                            <label>Ferrari Models</label>
+                            <input type="text" id="fleet-ferrari" value="F430">
+                        </div>
+                        <div class="form-group">
+                            <label>Aston Martin Models</label>
+                            <input type="text" id="fleet-aston" value="V8 Vantage (manual)">
+                        </div>
+                        <div class="form-group">
+                            <label>Acura/Honda/Nissan Models</label>
+                            <input type="text" id="fleet-japanese" value="NSX (NA1), S2000, 300ZX Twin Turbo">
+                        </div>
+                        <div class="form-group">
+                            <label>Other Brand (optional)</label>
+                            <input type="text" id="fleet-other-brand" placeholder="e.g., Alfa Romeo">
+                        </div>
+                        <div class="form-group">
+                            <label>Other Brand Models (optional)</label>
+                            <input type="text" id="fleet-other-models" placeholder="e.g., GTV6, 164 Q4">
+                        </div>
+                        
                         <div class="form-group">
                             <label>Note</label>
                             <input type="text" id="fleet-note" value="Subject to availability, acquisition timing and member demand.">
