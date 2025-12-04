@@ -817,8 +817,71 @@ A minimalist, industrial space built for people who love to drive.</textarea>
 
                 <!-- Waitlist Submissions -->
                 <div class="admin-section" id="section-waitlist">
-                    <h2>Waitlist Submissions</h2>
+                    <h2>Waitlist Section</h2>
+                    
+                    <!-- Section Content -->
                     <div class="editor-card">
+                        <h3>Section Content</h3>
+                        <div class="form-group">
+                            <label>Section Tag</label>
+                            <input type="text" id="waitlist-tag" placeholder="e.g., Founding Member Waitlist">
+                        </div>
+                        <div class="form-group">
+                            <label>Section Title (HTML allowed)</label>
+                            <input type="text" id="waitlist-title" placeholder="e.g., Ready to<br><em>join?</em>">
+                        </div>
+                        <div class="form-group">
+                            <label>Intro Text</label>
+                            <input type="text" id="waitlist-intro" placeholder="e.g., We review all submissions. Space is limited.">
+                        </div>
+                    </div>
+
+                    <!-- Form Questions -->
+                    <div class="editor-card">
+                        <h3>Form Questions (Car-Related)</h3>
+                        <p class="editor-note">Basic fields (Name, Email, Phone, ZIP) are fixed. Customize the car-related questions below.</p>
+                        
+                        <div class="form-group">
+                            <label>Manual Transmission Question</label>
+                            <input type="text" id="waitlist-q-manual" placeholder="e.g., Do you drive manual?">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Own Enthusiast Car Question</label>
+                            <input type="text" id="waitlist-q-own-car" placeholder="e.g., Own an enthusiast car?">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Current Car Question</label>
+                            <input type="text" id="waitlist-q-current-car" placeholder="e.g., If yes, what do you own?">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Current Car Placeholder</label>
+                            <input type="text" id="waitlist-q-current-placeholder" placeholder="e.g., e.g., 2002 BMW M3">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Car Interests Question</label>
+                            <input type="text" id="waitlist-q-interests" placeholder="e.g., What types of cars are you most interested in?">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Why Join Question</label>
+                            <input type="text" id="waitlist-q-why-join" placeholder="e.g., Why are you interested in joining BVCC?">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Ready to Join Question</label>
+                            <input type="text" id="waitlist-q-ready" placeholder="e.g., Would you be ready to join in early spring if accepted?">
+                        </div>
+                        
+                        <button class="btn btn-primary save-btn" data-section="waitlist">Save Changes</button>
+                    </div>
+
+                    <!-- Submissions -->
+                    <div class="editor-card">
+                        <h3>Submissions</h3>
                         <div class="submissions-header">
                             <p>Total Submissions: <strong id="totalSubmissions">0</strong></p>
                             <button class="btn btn-secondary" id="clearSubmissions">Clear All</button>

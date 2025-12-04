@@ -269,6 +269,17 @@ function populateFormFields(content) {
         if (content.waitlist.intro) {
             document.getElementById('waitlist-intro').value = content.waitlist.intro;
         }
+        // Form questions
+        if (content.waitlist.formQuestions) {
+            const q = content.waitlist.formQuestions;
+            if (q.manualQuestion) document.getElementById('waitlist-q-manual').value = q.manualQuestion;
+            if (q.ownCarQuestion) document.getElementById('waitlist-q-own-car').value = q.ownCarQuestion;
+            if (q.currentCarQuestion) document.getElementById('waitlist-q-current-car').value = q.currentCarQuestion;
+            if (q.currentCarPlaceholder) document.getElementById('waitlist-q-current-placeholder').value = q.currentCarPlaceholder;
+            if (q.interestsQuestion) document.getElementById('waitlist-q-interests').value = q.interestsQuestion;
+            if (q.whyJoinQuestion) document.getElementById('waitlist-q-why-join').value = q.whyJoinQuestion;
+            if (q.readyQuestion) document.getElementById('waitlist-q-ready').value = q.readyQuestion;
+        }
     }
     
     // Gallery
@@ -529,7 +540,16 @@ function buildContentObject() {
         waitlist: {
             tag: document.getElementById('waitlist-tag').value,
             title: document.getElementById('waitlist-title').value,
-            intro: document.getElementById('waitlist-intro').value
+            intro: document.getElementById('waitlist-intro').value,
+            formQuestions: {
+                manualQuestion: document.getElementById('waitlist-q-manual').value,
+                ownCarQuestion: document.getElementById('waitlist-q-own-car').value,
+                currentCarQuestion: document.getElementById('waitlist-q-current-car').value,
+                currentCarPlaceholder: document.getElementById('waitlist-q-current-placeholder').value,
+                interestsQuestion: document.getElementById('waitlist-q-interests').value,
+                whyJoinQuestion: document.getElementById('waitlist-q-why-join').value,
+                readyQuestion: document.getElementById('waitlist-q-ready').value
+            }
         },
         gallery: galleryImages,
         branding: {

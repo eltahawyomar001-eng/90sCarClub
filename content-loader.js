@@ -276,6 +276,66 @@ function applyWaitlist(waitlist) {
         const intro = section.querySelector('.waitlist-intro');
         if (intro) intro.textContent = waitlist.intro;
     }
+    
+    // Form questions (editable car-related questions)
+    if (waitlist.formQuestions) {
+        const q = waitlist.formQuestions;
+        
+        if (q.manualQuestion) {
+            const label = section.querySelector('.form-label-manual');
+            if (label) {
+                const requiredSpan = label.querySelector('.required');
+                label.textContent = q.manualQuestion + ' ';
+                if (requiredSpan) label.appendChild(requiredSpan);
+            }
+        }
+        
+        if (q.ownCarQuestion) {
+            const label = section.querySelector('.form-label-own-car');
+            if (label) {
+                const requiredSpan = label.querySelector('.required');
+                label.textContent = q.ownCarQuestion + ' ';
+                if (requiredSpan) label.appendChild(requiredSpan);
+            }
+        }
+        
+        if (q.currentCarQuestion) {
+            const label = section.querySelector('.form-label-current-car');
+            if (label) label.textContent = q.currentCarQuestion;
+        }
+        
+        if (q.currentCarPlaceholder) {
+            const input = section.querySelector('.form-placeholder-current-car');
+            if (input) input.placeholder = q.currentCarPlaceholder;
+        }
+        
+        if (q.interestsQuestion) {
+            const label = section.querySelector('.form-label-interests');
+            if (label) {
+                const requiredSpan = label.querySelector('.required');
+                label.textContent = q.interestsQuestion + ' ';
+                if (requiredSpan) label.appendChild(requiredSpan);
+            }
+        }
+        
+        if (q.whyJoinQuestion) {
+            const label = section.querySelector('.form-label-why-join');
+            if (label) {
+                const requiredSpan = label.querySelector('.required');
+                label.textContent = q.whyJoinQuestion + ' ';
+                if (requiredSpan) label.appendChild(requiredSpan);
+            }
+        }
+        
+        if (q.readyQuestion) {
+            const label = section.querySelector('.form-label-ready');
+            if (label) {
+                const requiredSpan = label.querySelector('.required');
+                label.textContent = q.readyQuestion + ' ';
+                if (requiredSpan) label.appendChild(requiredSpan);
+            }
+        }
+    }
 }
 
 function applyGallery(gallery) {
