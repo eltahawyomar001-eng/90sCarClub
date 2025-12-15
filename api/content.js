@@ -150,6 +150,12 @@ function getDefaultContent() {
         whyJoinQuestion: "Why are you interested in joining BVCC?",
         readyQuestion: "Would you be ready to join in early spring if accepted?",
         costQuestion: "Membership will include an initiation fee in the mid–four-figure range and monthly dues. Is this general level of cost within what you'd expect for a drivers' club?",
+        costOptions: {
+          opt1: "Yes",
+          opt2: "I'd need to learn more",
+          opt3: "No",
+          opt4: "I'd need more detail before deciding"
+        },
         usageQuestion: "How often do you expect to use the club?",
         commentsQuestion: "Any other comments on how we could make this your dream garage?"
       }

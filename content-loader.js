@@ -345,6 +345,30 @@ function applyWaitlist(waitlist) {
             }
         }
         
+        // Update cost expectation dropdown options
+        if (q.costOptions) {
+            const select = section.querySelector('#costExpectation');
+            if (select) {
+                const opts = q.costOptions;
+                // Keep first "Select..." option, update others
+                const options = select.querySelectorAll('option');
+                if (options[1] && opts.opt1) options[1].textContent = opts.opt1;
+                if (options[2] && opts.opt2) options[2].textContent = opts.opt2;
+                if (options[3] && opts.opt3) options[3].textContent = opts.opt3;
+                // Add 4th option if doesn't exist
+                if (opts.opt4) {
+                    if (options[4]) {
+                        options[4].textContent = opts.opt4;
+                    } else {
+                        const newOpt = document.createElement('option');
+                        newOpt.value = 'unsure';
+                        newOpt.textContent = opts.opt4;
+                        select.appendChild(newOpt);
+                    }
+                }
+            }
+        }
+        
         if (q.usageQuestion) {
             const label = section.querySelector('.form-label-usage');
             if (label) {

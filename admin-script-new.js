@@ -280,6 +280,12 @@ function populateFormFields(content) {
             if (q.whyJoinQuestion) document.getElementById('waitlist-q-why-join').value = q.whyJoinQuestion;
             if (q.readyQuestion) document.getElementById('waitlist-q-ready').value = q.readyQuestion;
             if (q.costQuestion) document.getElementById('waitlist-q-cost').value = q.costQuestion;
+            if (q.costOptions) {
+                if (q.costOptions.opt1) document.getElementById('waitlist-q-cost-opt1').value = q.costOptions.opt1;
+                if (q.costOptions.opt2) document.getElementById('waitlist-q-cost-opt2').value = q.costOptions.opt2;
+                if (q.costOptions.opt3) document.getElementById('waitlist-q-cost-opt3').value = q.costOptions.opt3;
+                if (q.costOptions.opt4) document.getElementById('waitlist-q-cost-opt4').value = q.costOptions.opt4;
+            }
             if (q.usageQuestion) document.getElementById('waitlist-q-usage').value = q.usageQuestion;
             if (q.commentsQuestion) document.getElementById('waitlist-q-comments').value = q.commentsQuestion;
         }
@@ -553,6 +559,12 @@ function buildContentObject() {
                 whyJoinQuestion: document.getElementById('waitlist-q-why-join').value,
                 readyQuestion: document.getElementById('waitlist-q-ready').value,
                 costQuestion: document.getElementById('waitlist-q-cost').value,
+                costOptions: {
+                    opt1: document.getElementById('waitlist-q-cost-opt1').value,
+                    opt2: document.getElementById('waitlist-q-cost-opt2').value,
+                    opt3: document.getElementById('waitlist-q-cost-opt3').value,
+                    opt4: document.getElementById('waitlist-q-cost-opt4').value
+                },
                 usageQuestion: document.getElementById('waitlist-q-usage').value,
                 commentsQuestion: document.getElementById('waitlist-q-comments').value
             }
