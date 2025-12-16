@@ -345,23 +345,33 @@ function applyWaitlist(waitlist) {
             }
         }
         
-        // Update cost expectation dropdown options
+        // Update cost expectation dropdown options (both text AND value)
         if (q.costOptions) {
             const select = section.querySelector('#costExpectation');
             if (select) {
                 const opts = q.costOptions;
-                // Keep first "Select..." option, update others
+                // Keep first "Select..." option, update others with both value and text
                 const options = select.querySelectorAll('option');
-                if (options[1] && opts.opt1) options[1].textContent = opts.opt1;
-                if (options[2] && opts.opt2) options[2].textContent = opts.opt2;
-                if (options[3] && opts.opt3) options[3].textContent = opts.opt3;
+                if (options[1] && opts.opt1) {
+                    options[1].textContent = opts.opt1;
+                    options[1].value = opts.opt1; // Value = display text for Google Sheets
+                }
+                if (options[2] && opts.opt2) {
+                    options[2].textContent = opts.opt2;
+                    options[2].value = opts.opt2;
+                }
+                if (options[3] && opts.opt3) {
+                    options[3].textContent = opts.opt3;
+                    options[3].value = opts.opt3;
+                }
                 // Add 4th option if doesn't exist
                 if (opts.opt4) {
                     if (options[4]) {
                         options[4].textContent = opts.opt4;
+                        options[4].value = opts.opt4;
                     } else {
                         const newOpt = document.createElement('option');
-                        newOpt.value = 'unsure';
+                        newOpt.value = opts.opt4; // Value = display text
                         newOpt.textContent = opts.opt4;
                         select.appendChild(newOpt);
                     }
